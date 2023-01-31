@@ -1,0 +1,31 @@
+﻿@model List<PermissionLevels.DTOs.Module>
+@{
+    ViewData["Title"] = "Modules";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Module ID</th>
+            <th>Module Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ModuleID</td>
+                <td>@item.ModuleName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var table = $('#example').DataTable({
+            responsive: true
+        });
+    });
+</script>

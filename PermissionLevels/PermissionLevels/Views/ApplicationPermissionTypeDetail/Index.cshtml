@@ -1,0 +1,30 @@
+﻿@model List<PermissionLevels.DTOs.ApplicationPermissionTypeDetail>
+
+<h4>Application Name: @(Model.FirstOrDefault()?.ApplicationName)</h4>
+<h4>List of @(Model.FirstOrDefault()?.PermissionType)</h4>
+
+<table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CompanyNameOrGroupNameOrUserName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@(Url.Action("Index", "Home"))" class="btn btn-primary btn-sm" title="Back">Back</a>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var table = $('#example').DataTable({
+            responsive: true
+        });
+    });
+</script>

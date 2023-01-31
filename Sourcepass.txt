@@ -1,0 +1,98 @@
+- Permission
+
+Module 
+- Application
+- Knowledgebase
+
+-Application
+App A
+App B
+aPP C
+APP D
+-Company - MASTER DATA
+-GROUPS - under 1 group you have multiple users 
+-USERS - 1 user may have multiple groups
+ 
+Permission Level - Global
+Company  - HAS SOME PERMISSION - WHETHTHER ITS OVERRIDEN OR GLOBAL
+Group  - FRONT END - 
+User
+ 
+Thumb rule  - if you are overriding at any level, inheritance will not apply
+ 
+Inheritance concept
+1. APP A - global
+automatically all the companies, groups and users can access it.
+2. App A - NOT Global
+- BY DEFAULT NO ACCESS TO ANY Level
+3. APP A- GLOBAL BUT AT COMPANY LEVEL - OVERRIDE THE PERMISSION FOR COMPANY AND SETTING NO ACCESS
+4. App A - NOT Global - OVERRIDE THE PERMISSION AT COMPANY LEVEL AND SETTING ISAllowed.
+User - Jonathan 
+Company -A 
+gROUPS = - fRONT END , BACK END
+Company - A,B,C,D  - BY DEFAULTS ALL USERS /GROUPS HAVE ACCESS TO ITS
+oVERRIDING FRONT END - APP A-
+OVEERING BACK END  - app B
+USER - OVERRIDING - APP C , APP D
+
+
+
+
+Groups
+	GroupID
+	GroupName
+
+Companies
+	CompanyID
+	CompanyName
+	
+Users
+	UserID
+	CompanyID
+	GroupID
+	FirstName
+	LastName
+
+PermissionTypes
+	PermissionTypeID
+	Description (Global, Company, Group, User)	
+
+Modules
+	ModuleID
+	ModuleName
+
+Applications
+	ApplicationID
+	ModuleID
+	ApplicationName
+
+ApplicationPermissionTypes
+	ApplicationPermissionTypeID
+	ApplicationID
+	PermissionTypeID
+
+ApplicationPermissionTypeDetails
+	ApplicationPermissionTypeDetailID
+	ApplicationPermissionTypeID
+	CompanyIDGroupIDUserID
+
+
+
+
+
+delete from Users
+delete from Groups
+delete from Companies
+delete from PermissionTypes
+delete from Modules
+delete from ApplicationPermissionTypeDetails
+delete from ApplicationPermissionTypes
+delete from Applications
+
+
+	
+	
+
+
+
+
